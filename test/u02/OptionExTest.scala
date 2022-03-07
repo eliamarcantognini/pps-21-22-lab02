@@ -15,3 +15,8 @@ class OptionExTest:
     assertEquals(filter(s1)(_ > 8), None())
     assertEquals(filter(s2)(_ > 2), None())
 
+  @Test def mapTest(): Unit =
+    assertEquals(map(s1)(_ > 2), Some(true))
+    assertEquals(map(s1)(_ > 8), Some(false))
+    assertEquals(map(s2)(_ > 2), None())
+

@@ -1,5 +1,7 @@
 package u02.ex
 
+import u02.ex.OptionalsEx.OptionEx
+
 object OptionalsEx extends App {
 
   enum OptionEx[A]:
@@ -20,8 +22,12 @@ object OptionalsEx extends App {
       case Some(a) => f(a)
       case _ => None()
 
-    def filter[A](opt: OptionEx[A])(pred: A => Boolean): OptionEx[A] = opt match
-      case Some(a) => if (pred(a)) Some(a) else None() 
+    def filter[A](opt: OptionEx[A])(f: A => Boolean): OptionEx[A] = opt match
+      case Some(a) => if (f(a)) Some(a) else None()
       case _ => None()
-  
+
+    def map[A, B](opt: OptionEx[A])(f: A => Boolean): OptionEx[Boolean] = opt match
+      case Some(a) => Some(f(a))
+      case _ => None()
+
 }
