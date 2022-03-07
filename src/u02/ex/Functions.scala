@@ -1,6 +1,6 @@
 package u02.ex
 
-object part2a extends App:
+object Functions extends App:
 
   // val to function literal
   val parity: Int => String = _ match
