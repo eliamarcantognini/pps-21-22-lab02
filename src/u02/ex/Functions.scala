@@ -13,9 +13,13 @@ object Functions extends App:
 
   val valWithCurrying: Double => Double => Double => Boolean =
     (x: Double) => (y: Double) => (z: Double) => x <= y && y <= z
-    
+
   val valWithoutCurrying: (Double, Double, Double) => Boolean = (x, y, z) => x <= y && y <= z
-  
+
   def defWithCurrying(x: Double)(y: Double)(z: Double): Boolean = x <= y && y <= z
-  
+
   def defWithoutCurrying(x: Double, y: Double, z: Double): Boolean = x <= y && y <= z
+
+  def compose(f: Int => Int, g: Int => Int): Int => Int = x => f(g(x))
+
+  def composeWithGenerics[A, B, C](f: B => C, g: A => B): A => C = x => f(g(x))
