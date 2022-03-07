@@ -24,3 +24,10 @@ class FunctionsTest:
     assertTrue(notEmpty("foo"))
     assertFalse(notEmpty(""))
     assertTrue(notEmpty("foo") && !notEmpty(""))
+
+  @Test def negWithGenericsTest(): Unit =
+    def isEven(n: Int): Boolean = n % 2 == 0
+    val isOdd = negWithGenerics(isEven)
+    val notEmptyWithGenerics = negWithGenerics(empty)
+    assertFalse(isOdd(n1))
+    assertTrue(notEmptyWithGenerics("foo"))
