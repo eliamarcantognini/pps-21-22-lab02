@@ -13,7 +13,6 @@ object Functions extends App:
 
   // b)
   def neg(p: String => Boolean): String => Boolean = !p(_)
-//  val neg: (String => Boolean) => String => Boolean = (p: String => Boolean) => !p(_)
   def negWithGenerics[X](p: X => Boolean): X => Boolean = !p(_)
 
   val empty: String => Boolean = _ == ""
