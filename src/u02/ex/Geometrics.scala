@@ -14,3 +14,7 @@ object Geometrics extends App:
     case Circle(r) => 2 * Math.PI * r
     case Square(s) => s * 4
 
+  def area(shape: Shape): Double = shape match
+    case Rectangle(s1, s2) => s1 * s2
+    case Circle(r) => Math.PI * r * r
+    case Square(s) => s * s
