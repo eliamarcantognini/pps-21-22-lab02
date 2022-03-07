@@ -1,11 +1,25 @@
-package u02
+package u02.ex.submits
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import u02.ex.Fibonacci.{fib, fibTailRec}
 
-class FibonacciTest:
+object Es6:
+  
+  // Exercise
+  def fib(n: Int): Int = n match
+    case 0 => 0
+    case 1 | 2 => 1
+    case _ => fib(n-1) + fib(n-2)
 
+  def fibTailRec(n: Int): Long =
+    @annotation.tailrec
+    def _fib(n: Int, acc1: Long, acc2: Long): Long = n match
+      case 0 => acc1
+      case 1 => acc2
+      case _ => _fib(n - 1, acc2, acc1 + acc2)
+    _fib(n, 0, 1)
+
+  // Test
   @Test def fibTest(): Unit =
     assertEquals((fib(0), fib(1), fib(2), fib(3), fib(4), fib(5)), (0, 1, 1, 2, 3, 5))
 

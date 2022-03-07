@@ -1,4 +1,4 @@
-package u02
+package u02.ex
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
