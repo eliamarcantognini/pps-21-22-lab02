@@ -13,10 +13,6 @@ object Functions extends App:
     case n if n % 2 == 0 => "even"
     case _ => "odd"
 
-  // test parity
-//  println(parity(10))
-//  println(parity2(5))
-
   // b)
   val neg: (String => Boolean) => String => Boolean = (p: String => Boolean) => !p(_)
   def negWithGenerics[X](p: X => Boolean): X => Boolean = !p(_)
