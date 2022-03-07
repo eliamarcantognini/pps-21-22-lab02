@@ -17,7 +17,5 @@ class ComposeFunctionsTest:
 
   @Test def composeWithGenericsTest(): Unit =
     assertEquals(composeWithGenerics(f1, f2)(n), 9)
-//    val comp = composeWithGenerics(f3, f4)
-//    assertFalse(comp("ciao"))
     assertFalse(composeWithGenerics(f3, f4)("ciao"))
 
