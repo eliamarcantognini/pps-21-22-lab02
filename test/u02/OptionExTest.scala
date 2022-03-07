@@ -9,6 +9,7 @@ class OptionExTest:
 
   private val s1: OptionEx[Int] = Some(5)
   private val s2: OptionEx[Int] = None()
+  private val s3: OptionEx[String] = Some("Dieci")
 
   @Test def filterTest(): Unit =
     assertEquals(filter(s1)(_ > 2), Some(5))
@@ -19,4 +20,9 @@ class OptionExTest:
     assertEquals(map(s1)(_ > 2), Some(true))
     assertEquals(map(s1)(_ > 8), Some(false))
     assertEquals(map(s2)(_ > 2), None())
+
+  @Test def map2Test(): Unit =
+    assertEquals(map2(s1, s2), None())
+    assertEquals(map2(s2, s1), None())
+    assertEquals(map2(s1, s3), Some((5, "Dieci")))
 

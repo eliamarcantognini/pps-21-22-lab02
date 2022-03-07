@@ -30,4 +30,8 @@ object OptionalsEx extends App {
       case Some(a) => Some(f(a))
       case _ => None()
 
+    def map2[A, B](opt1: OptionEx[A], opt2: OptionEx[B]): OptionEx[(A, B)] = (opt1, opt2) match
+      case (Some(a), Some(b)) => Some((a, b))
+      case _ => None()
+
 }
