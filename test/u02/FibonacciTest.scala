@@ -13,3 +13,5 @@ class FibonacciTest:
     assertEquals((fibTailRec(0), fibTailRec(1), fibTailRec(2),
       fibTailRec(3), fibTailRec(4), fibTailRec(5)),
       (0, 1, 1, 2, 3, 5))
+    val n = 2880067194370816120L
+    assertEquals(fibTailRec(90), 2880067194370816120L )
