@@ -16,7 +16,7 @@ object Es8:
       case Some(a) => if (f(a)) Some(a) else None()
       case _ => None()
 
-    def map[A, B](opt: Option[A])(f: A => Boolean): Option[Boolean] = opt match
+    def map[A](opt: Option[A])(f: A => Boolean): Option[Boolean] = opt match
       case Some(a) => Some(f(a))
       case _ => None()
 

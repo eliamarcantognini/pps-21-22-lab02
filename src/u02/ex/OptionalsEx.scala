@@ -18,7 +18,7 @@ object OptionalsEx extends App {
       case Some(a) => a
       case _ => orElse
 
-    def flatMap[A, B](opt: OptionEx[A])(f: A => OptionEx[B]): OptionEx[B] = opt match
+    def flatMap[A](opt: OptionEx[A])(f: A => OptionEx[Boolean]): OptionEx[Boolean] = opt match
       case Some(a) => f(a)
       case _ => None()
 
@@ -26,7 +26,7 @@ object OptionalsEx extends App {
       case Some(a) => if (f(a)) Some(a) else None()
       case _ => None()
 
-    def map[A, B](opt: OptionEx[A])(f: A => Boolean): OptionEx[Boolean] = opt match
+    def map[A, B](opt: OptionEx[A])(f: A => B): OptionEx[B] = opt match
       case Some(a) => Some(f(a))
       case _ => None()
 
