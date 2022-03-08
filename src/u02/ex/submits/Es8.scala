@@ -6,30 +6,30 @@ import org.junit.jupiter.api.Test
 object Es8:
 
   // Exercise
-  enum OptionEx[A]:
+  enum Option[A]:
     case Some(a: A)
-    case None() // here parens are needed because of genericity
+    case None()
 
-  object OptionEx:
-    
-    def filter[A](opt: OptionEx[A])(f: A => Boolean): OptionEx[A] = opt match
+  object Option:
+
+    def filter[A](opt: Option[A])(f: A => Boolean): Option[A] = opt match
       case Some(a) => if (f(a)) Some(a) else None()
       case _ => None()
-  
-    def map[A, B](opt: OptionEx[A])(f: A => Boolean): OptionEx[Boolean] = opt match
+
+    def map[A, B](opt: Option[A])(f: A => Boolean): Option[Boolean] = opt match
       case Some(a) => Some(f(a))
       case _ => None()
-  
-    def map2[A, B](opt1: OptionEx[A], opt2: OptionEx[B]): OptionEx[(A, B)] = (opt1, opt2) match
+
+    def map2[A, B](opt1: Option[A], opt2: Option[B]): Option[(A, B)] = (opt1, opt2) match
       case (Some(a), Some(b)) => Some((a, b))
       case _ => None()
 
   // Test
-  import OptionEx.*
-  
-  private val s1: OptionEx[Int] = Some(5)
-  private val s2: OptionEx[Int] = None()
-  private val s3: OptionEx[String] = Some("Dieci")
+  import Option.*
+
+  private val s1: Option[Int] = Some(5)
+  private val s2: Option[Int] = None()
+  private val s3: Option[String] = Some("Dieci")
 
   @Test def filterTest(): Unit =
     assertEquals(filter(s1)(_ > 2), Some(5))

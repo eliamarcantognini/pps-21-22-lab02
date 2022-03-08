@@ -19,7 +19,6 @@ object Es1:
     assertEquals(parity(n1), "even")
     assertEquals(parity(n2), "odd")
 
-
   @Test def parity2Test(): Unit =
     assertEquals(parity2(n1), "even")
     assertEquals(parity2(n2), "odd")
