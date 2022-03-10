@@ -5,7 +5,8 @@ import org.junit.jupiter.api.Test
 
 object Es4:
 
-  // Exercise
+  // Exercise paste from:
+  // https://github.com/eliamarcantognini/pps-21-22-lab02/blob/master/src/u02/ex/Functions.scala
   val valWithCurrying: Double => Double => Double => Boolean =
     (x: Double) => (y: Double) => (z: Double) => x <= y && y <= z
 
@@ -15,7 +16,8 @@ object Es4:
 
   def defWithoutCurrying(x: Double, y: Double, z: Double): Boolean = x <= y && y <= z
 
-  // Test
+  // Test paste from:
+  // https://github.com/eliamarcantognini/pps-21-22-lab02/blob/master/test/u02/ex/CurryingFunctionsTest.scala
   private val d1 = 3.0
   private val d2 = 7.5
   private val d3 = 9.2

@@ -5,12 +5,14 @@ import org.junit.jupiter.api.Test
 
 object Es5:
 
-  // Exercise
+  // Exercise paste from:
+  // https://github.com/eliamarcantognini/pps-21-22-lab02/blob/master/src/u02/ex/Functions.scala
   def compose(f: Int => Int, g: Int => Int): Int => Int = x => f(g(x))
 
   def composeWithGenerics[A, B, C](f: B => C, g: A => B): A => C = x => f(g(x))
 
-  // Test
+  // Test paste from: 
+  // https://github.com/eliamarcantognini/pps-21-22-lab02/blob/master/test/u02/ex/ComposeFunctionsTest.scala
   private val n = 5
   private val f1: Int => Int = _ - 1
   private val f2: Int => Int = _ * 2

@@ -5,7 +5,8 @@ import org.junit.jupiter.api.Test
 
 object Es7:
 
-  // Exercise
+  // Exercise paste from:
+  // https://github.com/eliamarcantognini/pps-21-22-lab02/blob/master/src/u02/ex/Geometrics.scala
   enum Shape:
     case Rectangle(side1: Double, side2: Double)
     case Circle(radius: Double)
@@ -23,7 +24,8 @@ object Es7:
     case Circle(r) => Math.PI * r * r
     case Square(s) => s * s
 
-  // Test
+  // Test paste from:
+  // https://github.com/eliamarcantognini/pps-21-22-lab02/blob/master/test/u02/ex/GeometricsTest.scala
   private val rect = Rectangle(5, 2)
   private val circle = Circle(3)
   private val square = Square(4)

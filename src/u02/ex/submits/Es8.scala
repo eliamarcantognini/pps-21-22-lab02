@@ -5,7 +5,8 @@ import org.junit.jupiter.api.Test
 
 object Es8:
 
-  // Exercise
+  // Exercise paste from:
+  // https://github.com/eliamarcantognini/pps-21-22-lab02/blob/master/src/u02/ex/OptionalsEx.scala
   enum Option[A]:
     case Some(a: A)
     case None()
@@ -24,7 +25,8 @@ object Es8:
       case (Some(a), Some(b)) => Some((a, b))
       case _ => None()
 
-  // Test
+  // Test paste from:
+  // https://github.com/eliamarcantognini/pps-21-22-lab02/blob/master/test/u02/ex/OptionExTest.scala
   import Option.*
 
   private val s1: Option[Int] = Some(5)

@@ -5,10 +5,12 @@ import org.junit.jupiter.api.Test
 
 object Es3:
 
-  // Exercise
+  // Exercise paste from:
+  // https://github.com/eliamarcantognini/pps-21-22-lab02/blob/master/src/u02/ex/Functions.scala
   def negWithGenerics[X](p: X => Boolean): X => Boolean = !p(_)
 
-  // Test 
+  // Test paste from:
+  // https://github.com/eliamarcantognini/pps-21-22-lab02/blob/master/test/u02/ex/FunctionsTest.scala
   private val empty: String => Boolean = _ == ""
   private val n1 = 10
   
